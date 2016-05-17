@@ -21,6 +21,8 @@ public class MovementScript : MonoBehaviour
     float AnimSpeedMultiplier = 1f;
     [SerializeField]
     float GroundCheckDistance = 0.1f;
+    [SerializeField]
+    Transform resetPoint;
 
 
     private Vector3 c_Move;
@@ -227,8 +229,7 @@ public class MovementScript : MonoBehaviour
     {
         if(transform.position.y < -25)
         {
-            UnityEngine.SceneManagement.SceneManager.UnloadScene("scene 1");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("scene 1");
+            transform.position = resetPoint.position;
 
         }
     }
