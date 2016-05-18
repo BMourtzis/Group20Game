@@ -4,31 +4,24 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class MovementScript : MonoBehaviour
 {
-    [SerializeField]
-    float MovingTurnSpeed = 360;
-    [SerializeField]
-    float StationaryTurnSpeed = 180;
-    [SerializeField]
-    float JumpPower = 12f;
-    [Range(1f, 4f)]
-    [SerializeField]
-    float GravityMultiplier = 2f;
-    [SerializeField]
-    float RunCycleLegOffset = 0.3f;
-    [SerializeField]
-    float MoveSpeedMultiplier = 1f;
-    [SerializeField]
-    float AnimSpeedMultiplier = 1f;
-    [SerializeField]
-    float GroundCheckDistance = 0.1f;
-    [SerializeField]
-    Transform resetPoint;
+    [SerializeField] [Range(1f, 4f)] float MovingTurnSpeed = 360;
+    [SerializeField] float StationaryTurnSpeed = 180;
+    [SerializeField] float JumpPower = 12f;
+    [SerializeField] float GravityMultiplier = 2f;
+    [SerializeField] float RunCycleLegOffset = 0.3f;
+    [SerializeField] float MoveSpeedMultiplier = 1f;
+    [SerializeField] float AnimSpeedMultiplier = 1f;
+    [SerializeField] float GroundCheckDistance = 0.1f;
+    [SerializeField] Transform resetPoint;
+    [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
-
+    private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
+    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private Vector3 c_Move;
     private bool c_Jump;
-    //private Animator c_Animator;
-    private Rigidbody c_Rigidbody;
+    private bool c_Run;
+    private Animator c_Animator;
+    private Rigidbody2D c_Rigidbody;
     private bool isGrounded;
     float c_OrigGroundCheckDistance;
     const float k_Half = 0.5f;
@@ -37,16 +30,15 @@ public class MovementScript : MonoBehaviour
     Vector3 c_GroundNormal;
     bool doubleJump;
 
-    //CapsuleCollider c_Capsule;
-
     //Model fields
     private Transform modelTransform;
     private Quaternion modelRotation;
 
     void Start()
     {
-        c_Rigidbody = GetComponent<Rigidbody>();
-        modelTransform = GameObject.Find("PascalModel").transform;
+        m_GroundCheck = transform.Find("GroundCheck");
+        c_Rigidbody = GetComponent<Rigidbody2D>();
+        c_Animator = GetComponent<Animator>();
         doubleJump = false;
     }
 
@@ -61,22 +53,24 @@ public class MovementScript : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        c_Animator = GetComponent<Animator>();
         checkForReset();
-
+        c_Run = false;
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
-
-        if(h > 0)
+ 
+        if (h > 0)
         {
-            modelTransform.rotation = Quaternion.Lerp(modelTransform.rotation, Quaternion.Euler(0, 90, 0), 0.4f);
+            GetComponent<SpriteRenderer>().flipX = false;
         }
-        else if(h < 0)
+        else if (h < 0)
         {
-            
-            modelTransform.rotation = Quaternion.Lerp(modelTransform.rotation, Quaternion.Euler(0, 270, 0), 0.4f);
+            GetComponent<SpriteRenderer>().flipX = true;
         }
 
-        
-
+        if(h != 0)
+        {
+            c_Run = true;
+        }
 
         c_Move = Vector3.right * h * 0.1f;
 
@@ -93,7 +87,7 @@ public class MovementScript : MonoBehaviour
             //AnimSpeedMultiplier = 1.0f;
         }
 
-        //c_Rigidbody.position = transform.position +  (c_Move* MoveSpeedMultiplier);
+        c_Rigidbody.position = transform.position +  (c_Move* MoveSpeedMultiplier);
 
         Move();
         c_Jump = false;
@@ -108,7 +102,6 @@ public class MovementScript : MonoBehaviour
         }
         //c_Move = transform.InverseTransformDirection(c_Move);
         CheckGroundStatus();
-        c_Move = Vector3.ProjectOnPlane(c_Move, c_GroundNormal);
         c_ForwardAmount = c_Move.x  ;
 
         //ApplyExtraTurnRotation();
@@ -123,39 +116,21 @@ public class MovementScript : MonoBehaviour
         }
 
         c_Rigidbody.position = transform.position + (c_Move * MoveSpeedMultiplier);
-        //UpdateAnimator();
+        UpdateAnimator();
     }
 
-    //void UpdateAnimator()
-    //{
-    //    //Update animator parameters
-    //    c_Animator.SetFloat("Forward", c_ForwardAmount, 0.1f, Time.deltaTime);
-    //    c_Animator.SetFloat("Turn", c_TurnAmount, 0.1f, Time.deltaTime);
-    //    c_Animator.SetBool("OnGround", isGrounded);
-
-    //    if (!isGrounded)
-    //    {
-    //        c_Animator.SetFloat("Jump", c_Rigidbody.velocity.y);
-    //    }
-
-    //    float runCycle = Mathf.Repeat(c_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime + RunCycleLegOffset, 1);
-    //    float jumpLeg = (runCycle < k_Half ? 1 : -1) * c_ForwardAmount;
-
-    //    if (isGrounded)
-    //    {
-    //        c_Animator.SetFloat("JumpLeg", jumpLeg);
-
-    //    }
-
-    //    if (isGrounded && c_Move.magnitude > 0)
-    //    {
-    //        c_Animator.speed = AnimSpeedMultiplier;
-    //    }
-    //    else
-    //    {
-    //        c_Animator.speed = 1;
-    //    }
-    //}
+    void UpdateAnimator()
+    {
+        c_Animator.SetBool("Run", c_Run);
+        if (!c_Jump)
+        {
+            c_Animator.SetBool("Jump", false);
+        }
+        else
+        {
+           c_Animator.SetBool("Jump", true);
+        }
+    }
 
     void HandleAirborneMovement()
     {
@@ -182,7 +157,7 @@ public class MovementScript : MonoBehaviour
 
     void Jump()
     {
-        c_Rigidbody.velocity = new Vector3(c_Rigidbody.velocity.x, JumpPower, c_Rigidbody.velocity.z);
+        c_Rigidbody.velocity = new Vector2(c_Rigidbody.velocity.x, JumpPower);
         isGrounded = false;
         //c_Animator.applyRootMotion = false;
         //GroundCheckDistance = 0.1f;
@@ -206,24 +181,37 @@ public class MovementScript : MonoBehaviour
 
     void CheckGroundStatus()
     {
-        RaycastHit hitInfo;
-#if UNITY_EDITOR
-        Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * GroundCheckDistance));
-#endif
-        if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, GroundCheckDistance))
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+        for (int i = 0; i < colliders.Length; i++)
         {
-            c_GroundNormal = hitInfo.normal;
-            isGrounded = true;
-            doubleJump = false;
-            //c_Animator.applyRootMotion = true;
-        }
-        else
-        {
-            isGrounded = false;
-            c_GroundNormal = Vector3.up;
-            //c_Animator.applyRootMotion = false;
+            if (colliders[i].gameObject != gameObject)
+            {
+                isGrounded = true;
+                doubleJump = false;
+            }
+                
         }
     }
+//    void CheckGroundStatus()
+//    {
+//        RaycastHit hitInfo;
+//#if UNITY_EDITOR
+//        Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * GroundCheckDistance));
+//#endif
+//        if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, GroundCheckDistance))
+//        {
+//            c_GroundNormal = hitInfo.normal;
+//            isGrounded = true;
+//            
+//            //c_Animator.applyRootMotion = true;
+//        }
+//        else
+//        {
+//            isGrounded = false;
+//            c_GroundNormal = Vector3.up;
+//            //c_Animator.applyRootMotion = false;
+//        }
+//    }
 
     void checkForReset()
     {
