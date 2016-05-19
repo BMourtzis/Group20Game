@@ -192,26 +192,6 @@ public class MovementScript : MonoBehaviour
                 
         }
     }
-//    void CheckGroundStatus()
-//    {
-//        RaycastHit hitInfo;
-//#if UNITY_EDITOR
-//        Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * GroundCheckDistance));
-//#endif
-//        if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, GroundCheckDistance))
-//        {
-//            c_GroundNormal = hitInfo.normal;
-//            isGrounded = true;
-//            
-//            //c_Animator.applyRootMotion = true;
-//        }
-//        else
-//        {
-//            isGrounded = false;
-//            c_GroundNormal = Vector3.up;
-//            //c_Animator.applyRootMotion = false;
-//        }
-//    }
 
     void checkForReset()
     {
