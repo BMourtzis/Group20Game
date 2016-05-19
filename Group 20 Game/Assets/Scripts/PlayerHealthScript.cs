@@ -1,26 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthScript : MonoBehaviour {
+public class PlayerHealthScript : MonoBehaviour {
 
     [SerializeField]
     float HealthPoints;
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-	    if(HealthPoints > 0)
+        if (HealthPoints > 0)
         {
             //End game;
         }
-	}
+    }
 
     //Decreases the Health of the Player
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool right)
     {
         HealthPoints -= damage;
-        //Vector3 newPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-        //transform.position = newPos;
+        GetComponent<MovementScript>().DamageTaken(right);
     }
 
     //Increases the Health of the Player

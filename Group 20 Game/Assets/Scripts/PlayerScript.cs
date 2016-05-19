@@ -12,9 +12,4 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
 	
 	}
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-
-    }
 }

@@ -7,14 +7,18 @@ public class EnemyAI : MonoBehaviour {
     float DamangePoints;
     [SerializeField]
     float step;
+    [SerializeField]
+    Transform[] PatrolPoints;
 
     private Vector3 LastKnownPosition;
     bool onAlert;
     GameObject player;
+    private int patrolPoint;
 
     // Use this for initialization
     void Start ()
     {
+        patrolPoint = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         onAlert = false;
     }
@@ -38,7 +42,7 @@ public class EnemyAI : MonoBehaviour {
 
         if(transform.position.y < -25)
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 
@@ -53,23 +57,22 @@ public class EnemyAI : MonoBehaviour {
 
     void MoveToLKP()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) <= 0.7)
+        float playDist = Vector2.Distance(transform.position, player.transform.position);
+        if (playDist <= 0.7)
         {
-            Attack();
+            if(transform.position.x < player.transform.position.x)
+            {
+                Attack(true);
+            }
+            else
+            {
+                Attack(false);
+            }
         }
         else
         {
-            Vector3 newPos = new Vector3(step * Time.deltaTime, 0f);
-            float dist = transform.position.x - LastKnownPosition.x;
-
-            if (dist > 0)
-            {
-                newPos *= -1;
-            }
-
-            transform.position += newPos;
-
-
+            Move(LastKnownPosition);
+            float dist = Vector2.Distance(transform.position, LastKnownPosition);
             if (Mathf.Abs(dist) < step)
             {
                 onAlert = false;
@@ -77,14 +80,39 @@ public class EnemyAI : MonoBehaviour {
         }
     }
 
-    void Attack()
+    void Attack(bool right)
     {
-        HealthScript playerHealth = player.GetComponent<HealthScript>();
-        playerHealth.TakeDamage(DamangePoints);
+        PlayerHealthScript playerHealth = player.GetComponent<PlayerHealthScript>();
+        playerHealth.TakeDamage(DamangePoints, right);
     }
 
     void Patrol()
     {
+        Vector3 patPoint = PatrolPoints[patrolPoint].position;
+        float dist = Vector2.Distance(transform.position, patPoint);
 
+        if(Mathf.Abs(dist) < 1f)
+        {
+            patrolPoint++;
+            if(patrolPoint >= PatrolPoints.Length)
+            {
+                patrolPoint = 0;
+            }
+        }
+
+        Move(patPoint);
+    }
+
+    void Move(Vector3 newPos)
+    {
+        Vector3 movePos = new Vector3(step * Time.deltaTime, 0f);
+        float dist = transform.position.x - newPos.x;
+
+        if (dist > 0)
+        {
+            movePos *= -1;
+        }
+
+        transform.position += movePos;
     }
 }
