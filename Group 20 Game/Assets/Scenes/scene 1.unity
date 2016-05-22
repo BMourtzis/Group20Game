@@ -124,6 +124,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 185326, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
   m_IsPrefabParent: 0
@@ -169,6 +173,10 @@ Prefab:
     - target: {fileID: 185326, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 185326, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
@@ -272,6 +280,10 @@ Prefab:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 185326, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
   m_IsPrefabParent: 0
@@ -291,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamangePoints: 5
-  step: 0.5
+  step: 0.1
   PatrolPoints:
   - {fileID: 274688662}
   - {fileID: 1627651304}
@@ -396,7 +408,7 @@ MonoBehaviour:
   resetPoint: {fileID: 1823277271}
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 32768
+    m_Bits: 4096
 --- !u!95 &987337341
 Animator:
   serializedVersion: 3
@@ -495,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad59c31b5479dd34b841691a272660a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPoints: 100
+  HealthPoints: 0
 --- !u!1 &996453187
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +799,10 @@ Prefab:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 185326, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
   m_IsPrefabParent: 0
@@ -832,6 +848,10 @@ Prefab:
     - target: {fileID: 185326, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 185326, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}

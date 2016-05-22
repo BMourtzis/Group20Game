@@ -69,16 +69,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Assets\Bomb.cs" />
-    <Compile Include="Assets\Scripts\Assets\BombPickup.cs" />
-    <Compile Include="Assets\Scripts\Assets\Destroyer.cs" />
-    <Compile Include="Assets\Scripts\Assets\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Assets\Gun.cs" />
-    <Compile Include="Assets\Scripts\Assets\HealthPickup.cs" />
-    <Compile Include="Assets\Scripts\Assets\LayBombs.cs" />
-    <Compile Include="Assets\Scripts\Assets\Pauser.cs" />
-    <Compile Include="Assets\Scripts\Assets\PickupSpawner.cs" />
-    <Compile Include="Assets\Scripts\Assets\Rocket.cs" />
     <Compile Include="Assets\Scripts\CameraRotationScript.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
