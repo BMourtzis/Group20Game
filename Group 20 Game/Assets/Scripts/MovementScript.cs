@@ -64,15 +64,6 @@ public class MovementScript : MonoBehaviour
         checkForReset();
         c_Run = false;
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
- 
-        if (h > 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else if (h < 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
 
         if(h != 0)
         {

@@ -15,7 +15,10 @@ public class ProjectileScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	
+	    if(transform.position.y < -25)
+        {
+            Destroy(gameObject);
+        }
 	}
 
     void OnCollisionEnter2D(Collision2D other)
@@ -25,7 +28,6 @@ public class ProjectileScript : MonoBehaviour {
             if (other.gameObject.tag == "Enemy")
             {
                 other.gameObject.SendMessage("TakeDamage", Damage);
-                //other.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(Damage);
             }
             Destroy(gameObject);
         }

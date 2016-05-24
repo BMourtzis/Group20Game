@@ -30,4 +30,9 @@ public class PlayerHealthScript : MonoBehaviour {
     {
         HealthPoints += health;
     }
+
+    public float getHealth()
+    {
+        return HealthPoints;
+    }
 }
