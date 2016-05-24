@@ -1,15 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyHealth : MonoBehaviour {
+public class EnemyHealth : MonoBehaviour
+{
+    [SerializeField]
+    float HealthPoints;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        if (HealthPoints < 1)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+    }
+
+    //Decreases the Health of the Player
+    public void TakeDamage(float damage)
+    {
+        HealthPoints -= damage;
+    }
+
+    //Increases the Health of the Player
+    public void RecoverHealth(float health)
+    {
+        HealthPoints += health;
+    }
 }

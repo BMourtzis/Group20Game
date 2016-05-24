@@ -194,17 +194,4 @@ public class MovementScript : MonoBehaviour
 
         }
     }
-
-    public void DamageTaken(bool right)
-    {
-        if(right)
-        {
-            transform.position += Vector3.right;
-        }
-        else
-        {
-            transform.position += Vector3.left;
-        }
-
-    }
 }

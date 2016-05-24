@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamangePoints: 5
-  step: 0.1
+  step: 2
   PatrolPoints:
   - {fileID: 274688662}
   - {fileID: 1627651304}
@@ -321,6 +321,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &753244284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 753244281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d5abedc9aa4eb42bbc54abdefbcf7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthPoints: 10
+--- !u!61 &753244285
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 753244281}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1}
 --- !u!4 &753244288 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
@@ -469,6 +495,7 @@ Transform:
   - {fileID: 1579699232}
   - {fileID: 1957959096}
   - {fileID: 1438397388}
+  - {fileID: 1102732508}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!61 &987337344
@@ -540,6 +567,47 @@ Transform:
   - {fileID: 1688590703}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &1102732507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1102732508}
+  - 114: {fileID: 1102732509}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1102732508
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1102732507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.337, y: -0.162, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 987337343}
+  m_RootOrder: 3
+--- !u!114 &1102732509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1102732507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f31c6f28c1f6da49aa017cc7444b45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
+  weaponObj: {fileID: 176702, guid: cc206b962875aba4987d425196c88e3b, type: 2}
 --- !u!1001 &1393725701
 Prefab:
   m_ObjectHideFlags: 0
@@ -595,8 +663,30 @@ Prefab:
       propertyPath: m_Name
       value: EnemyObject
       objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
+      propertyPath: m_Size.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
+      propertyPath: m_Offset.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
+    - {fileID: 5800000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
+    - {fileID: 6100000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1438397387
@@ -703,7 +793,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
