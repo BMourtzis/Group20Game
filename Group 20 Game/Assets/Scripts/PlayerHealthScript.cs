@@ -19,12 +19,20 @@ public class PlayerHealthScript : MonoBehaviour {
     public void TakeDamage(float damage, bool right)
     {
         HealthPoints -= damage;
-        GetComponent<MovementScript>().DamageTaken(right);
+        Vector2 force;
+        if (right) { force = transform.right; }
+        else { force = transform.right*-1; }
+        GetComponent<Rigidbody2D>().AddForce(force * 400);
     }
 
     //Increases the Health of the Player
     public void RecoverHealth(float health)
     {
         HealthPoints += health;
+    }
+
+    public float getHealth()
+    {
+        return HealthPoints;
     }
 }
