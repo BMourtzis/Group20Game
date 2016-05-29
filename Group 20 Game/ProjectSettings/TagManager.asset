@@ -14,6 +14,7 @@ TagManager:
   - ExplosionFX
   - HealthBar
   - Weapon
+  - Projectile
   layers:
   - Default
   - TransparentFX

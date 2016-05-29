@@ -87,6 +87,9 @@ MonoBehaviour:
   Ammo: 100
   FireRate: 10
   EndOfBarrel: {fileID: 402336}
+  ProjectileSpeed: 10
+  NumberOfProjectiles: 1
+  AreaOfSpread: 0
 --- !u!212 &21260996
 SpriteRenderer:
   m_ObjectHideFlags: 1
