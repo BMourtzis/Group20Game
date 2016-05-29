@@ -11,6 +11,13 @@ public class WeaponScript : MonoBehaviour {
     public float FireRate;
     [SerializeField]
     Transform EndOfBarrel;
+    [SerializeField]
+    float ProjectileSpeed;
+    [SerializeField]
+    int NumberOfProjectiles;
+    [SerializeField]
+    float AreaOfSpread;
+
 
     void FixedUpdate()
     {
@@ -38,11 +45,27 @@ public class WeaponScript : MonoBehaviour {
 
     public void Fire()
     {
-       if(Ammo > 0)
+       if(Ammo > 0 && NumberOfProjectiles > 0)
         {
             Ammo--;
-            GameObject bullet = (GameObject)Instantiate(Projectile, EndOfBarrel.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.right * 1000);
+            float rotation = transform.rotation.eulerAngles.z;
+            float turnStep = 0;
+
+            if(NumberOfProjectiles != 1)
+            {
+                rotation += AreaOfSpread / 2;
+                turnStep = AreaOfSpread / (NumberOfProjectiles - 1);
+                if (NumberOfProjectiles % 2 == 0)
+                {
+                    rotation -= turnStep / 2;
+                }
+            }
+            for (int i = 0; i < NumberOfProjectiles; i++, rotation-= turnStep)
+            {
+                GameObject bullet = (GameObject)Instantiate(Projectile, EndOfBarrel.position, Quaternion.Euler(0,0,rotation));
+                bullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.right * 100 * ProjectileSpeed);
+            }
+            
         }
     }
 
