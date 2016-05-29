@@ -9,7 +9,11 @@ public class PlayerHealthScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (HealthPoints > 0)
+        if(HealthPoints > 101)
+        {
+            HealthPoints -= Time.deltaTime;
+        }
+        else if (HealthPoints <= 0)
         {
             //End game;
         }

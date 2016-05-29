@@ -6,8 +6,6 @@ public class PlayerWeaponsScript : MonoBehaviour {
 
     [SerializeField]
     float fireRate;
-    [SerializeField]
-    GameObject weaponObj;
 
     private bool c_Fire;
     GameObject weapon;
@@ -16,9 +14,10 @@ public class PlayerWeaponsScript : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        weapon = (GameObject)Instantiate(weaponObj, transform.position, transform.rotation);
-        weapon.transform.parent = transform;
-        InvokeRepeating("Fire", 0.0f, 1.0f / weapon.GetComponent<WeaponScript>().FireRate);
+        if(weapon != null)
+        {
+            InvokeRepeating("Fire", 0.0f, 1.0f / weapon.GetComponent<WeaponScript>().FireRate);
+        }
     }
 	
 	// Update is called once per frame
@@ -30,6 +29,13 @@ public class PlayerWeaponsScript : MonoBehaviour {
         {
             c_Fire = true;
         }
+    }
+
+    public void ReplaceWeapon(WeaponObject newWeapon)
+    {
+        weapon = (GameObject)Instantiate(newWeapon.getWeapon(), transform.position, transform.rotation);
+        weapon.transform.parent = transform;
+        InvokeRepeating("Fire", 0.0f, 1.0f / weapon.GetComponent<WeaponScript>().FireRate);
     }
 
     void Fire()
