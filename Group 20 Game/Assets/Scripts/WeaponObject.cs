@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class WeaponObject : MonoBehaviour
+[Serializable]
+public class WeaponObject 
 {
     [SerializeField]
     int Ammo;

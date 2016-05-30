@@ -7,13 +7,12 @@ public class HealthPackScript : ItemScript {
     int Health;
 
     // Use this for initialization
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
             other.GetComponent<PlayerHealthScript>().RecoverHealth(Health);
             Destroy(gameObject);
-            Health = 0;
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
+[Serializable]
 public class WeaponScript : MonoBehaviour {
 
     [SerializeField]
@@ -72,5 +74,14 @@ public class WeaponScript : MonoBehaviour {
     public int getAmmo()
     {
         return Ammo;
+    }
+
+    public void setAmmo(int newAmmo)
+    {
+        Ammo = newAmmo;
+    }
+    public void addAmmo(int addAmmo)
+    {
+        Ammo += addAmmo;
     }
 }

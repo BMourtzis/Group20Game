@@ -31,11 +31,26 @@ public class PlayerWeaponsScript : MonoBehaviour {
         }
     }
 
-    public void ReplaceWeapon(WeaponObject newWeapon)
+    public GameObject ReplaceWeapon(GameObject newWeapon)
     {
-        weapon = (GameObject)Instantiate(newWeapon.getWeapon(), transform.position, transform.rotation);
+        GameObject oldWeapon = null;
+        if(weapon != null)
+        {
+            RemoveWeapon();
+            oldWeapon = weapon;
+        }
+
+        weapon = (GameObject)Instantiate(newWeapon, transform.position, transform.rotation);
         weapon.transform.parent = transform;
-        InvokeRepeating("Fire", 0.0f, 1.0f / weapon.GetComponent<WeaponScript>().FireRate);
+        CancelInvoke();
+        InvokeRepeating("Fire", 0.0f, 1.0f / newWeapon.GetComponent<WeaponScript>().FireRate);
+
+        return oldWeapon;
+    }
+
+    void RemoveWeapon()
+    {
+        Destroy(weapon);
     }
 
     void Fire()

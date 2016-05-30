@@ -5,23 +5,13 @@ public class WeaponItem : ItemScript
 {
     [SerializeField]
     GameObject weaponObj;
-    [SerializeField]
-    int InitialAmmo;
-
-    WeaponObject weapon;
-
-    void Start()
-    {
-        weapon = new WeaponObject(weaponObj, InitialAmmo);
-    }
 
     // Use this for initialization
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Inventory>().addWeapon(weapon);
-            weapon = null;
+            other.GetComponent<Inventory>().addWeapon(weaponObj);
             Destroy(gameObject);
         }
     }
