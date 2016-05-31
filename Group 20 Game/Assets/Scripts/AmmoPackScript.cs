@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeaponItem : ItemScript
+public class AmmoPackScript : ItemScript
 {
+
+    [SerializeField]
+    int Ammo;
     [SerializeField]
     int weapon;
 
-    // Use this for initialization
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Inventory>().addWeapon(weapon);
+            other.GetComponent<Inventory>().addAmmo(Ammo, weapon);
             Destroy(gameObject);
+            Ammo = 0;
         }
     }
 }

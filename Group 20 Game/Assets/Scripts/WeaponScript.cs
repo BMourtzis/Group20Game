@@ -21,6 +21,8 @@ public class WeaponScript : MonoBehaviour {
     float AreaOfSpread;
 
 
+    bool Enabled;
+
     void FixedUpdate()
     {
         Vector3 mouse = Input.mousePosition;
@@ -67,8 +69,22 @@ public class WeaponScript : MonoBehaviour {
                 GameObject bullet = (GameObject)Instantiate(Projectile, EndOfBarrel.position, Quaternion.Euler(0,0,rotation));
                 bullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.right * 100 * ProjectileSpeed);
             }
-            
         }
+    }
+
+    public void Enable()
+    {
+        Enabled = true;
+    }
+
+    public void Disable()
+    {
+        Enabled = false;
+    }
+    
+    public bool getEnabled()
+    {
+        return Enabled;
     }
 
     public int getAmmo()
