@@ -26,4 +26,9 @@ public class EnemyHealth : MonoBehaviour
     {
         HealthPoints += health;
     }
+
+    public float getHealth()
+    {
+        return HealthPoints;
+    }
 }
