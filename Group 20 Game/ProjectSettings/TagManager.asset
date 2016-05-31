@@ -15,6 +15,7 @@ TagManager:
   - HealthBar
   - Weapon
   - Projectile
+  - TutorialText
   layers:
   - Default
   - TransparentFX

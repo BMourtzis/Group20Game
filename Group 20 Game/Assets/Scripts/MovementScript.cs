@@ -177,6 +177,14 @@ public class MovementScript : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemy" && other.gameObject.transform.position.y < transform.position.y-1)
+        {
+            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+        }
+    }
+
     void checkForReset()
     {
         if(transform.position.y < -25)
