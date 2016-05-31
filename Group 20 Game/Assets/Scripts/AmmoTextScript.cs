@@ -8,7 +8,10 @@ public class AmmoTextScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        int ammo = GameObject.FindGameObjectWithTag("Weapon").GetComponent<WeaponScript>().getAmmo();
-        GetComponent<Text>().text = "Ammo: " + ammo;
+        if(GameObject.FindGameObjectWithTag("Weapon") != null)
+        {
+            int ammo = GameObject.FindGameObjectWithTag("Weapon").GetComponent<WeaponScript>().getAmmo();
+            GetComponent<Text>().text = "Ammo: " + ammo;
+        }
 	}
 }

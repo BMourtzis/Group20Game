@@ -15,6 +15,6 @@ public class HealthTextScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        GetComponent<Text>().text = "Health: " + health.getHealth();
+        GetComponent<Text>().text = "Health: " + (int)health.getHealth();
 	}
 }
