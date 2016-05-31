@@ -4,16 +4,25 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class MovementScript : MonoBehaviour
 {
-    [SerializeField] [Range(1f, 4f)] float MovingTurnSpeed = 360;
-    [SerializeField] float StationaryTurnSpeed = 180;
-    [SerializeField] float JumpPower = 12f;
-    [SerializeField] float GravityMultiplier = 2f;
-    [SerializeField] float RunCycleLegOffset = 0.3f;
-    [SerializeField] float MoveSpeedMultiplier = 1f;
-    [SerializeField] float AnimSpeedMultiplier = 1f;
-    [SerializeField] float GroundCheckDistance = 0.1f;
-    [SerializeField] Transform resetPoint;
-    [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
+    [SerializeField]
+    [Range(1f, 4f)]
+    float MovingTurnSpeed = 360;
+    [SerializeField]
+    float JumpPower = 12f;
+    [SerializeField]
+    float GravityMultiplier = 2f;
+    [SerializeField]
+    float RunCycleLegOffset = 0.3f;
+    [SerializeField]
+    float MoveSpeedMultiplier = 1f;
+    [SerializeField]
+    float AnimSpeedMultiplier = 1f;
+    [SerializeField]
+    float GroundCheckDistance = 0.1f;
+    [SerializeField]
+    Transform resetPoint;
+    [SerializeField]
+    private LayerMask m_WhatIsGround;               // A mask determining what is ground to the character
 
     private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -26,13 +35,11 @@ public class MovementScript : MonoBehaviour
     float c_OrigGroundCheckDistance;
     const float k_Half = 0.5f;
     float c_TurnAmount;
-    float c_ForwardAmount;
     Vector3 c_GroundNormal;
     bool doubleJump;
+    bool damageTaken;
+    bool right;
 
-    //Model fields
-    private Transform modelTransform;
-    private Quaternion modelRotation;
 
     void Start()
     {
@@ -57,15 +64,6 @@ public class MovementScript : MonoBehaviour
         checkForReset();
         c_Run = false;
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
- 
-        if (h > 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else if (h < 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
 
         if(h != 0)
         {
@@ -87,7 +85,6 @@ public class MovementScript : MonoBehaviour
             //AnimSpeedMultiplier = 1.0f;
         }
 
-        c_Rigidbody.position = transform.position +  (c_Move* MoveSpeedMultiplier);
 
         Move();
         c_Jump = false;
@@ -100,11 +97,7 @@ public class MovementScript : MonoBehaviour
         {
             c_Move.Normalize();
         }
-        //c_Move = transform.InverseTransformDirection(c_Move);
         CheckGroundStatus();
-        c_ForwardAmount = c_Move.x  ;
-
-        //ApplyExtraTurnRotation();
 
         if (isGrounded)
         {
@@ -142,7 +135,6 @@ public class MovementScript : MonoBehaviour
             Jump();
         }
 
-        
         //GroundCheckDistance = c_Rigidbody.velocity.y < 0 ? c_OrigGroundCheckDistance : 0.01f;
     }
 
@@ -159,15 +151,7 @@ public class MovementScript : MonoBehaviour
     {
         c_Rigidbody.velocity = new Vector2(c_Rigidbody.velocity.x, JumpPower);
         isGrounded = false;
-        //c_Animator.applyRootMotion = false;
-        //GroundCheckDistance = 0.1f;
     }
-
-    //void ApplyExtraTurnRotation()
-    //{
-    //    float turnSpeed = Mathf.Lerp(StationaryTurnSpeed, MovingTurnSpeed, c_ForwardAmount);
-    //    transform.Rotate(0, c_TurnAmount * turnSpeed * Time.deltaTime, 0);
-    //}
 
     //public void OnAnimatorMove()
     //{
@@ -192,26 +176,6 @@ public class MovementScript : MonoBehaviour
                 
         }
     }
-//    void CheckGroundStatus()
-//    {
-//        RaycastHit hitInfo;
-//#if UNITY_EDITOR
-//        Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * GroundCheckDistance));
-//#endif
-//        if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, GroundCheckDistance))
-//        {
-//            c_GroundNormal = hitInfo.normal;
-//            isGrounded = true;
-//            
-//            //c_Animator.applyRootMotion = true;
-//        }
-//        else
-//        {
-//            isGrounded = false;
-//            c_GroundNormal = Vector3.up;
-//            //c_Animator.applyRootMotion = false;
-//        }
-//    }
 
     void checkForReset()
     {
