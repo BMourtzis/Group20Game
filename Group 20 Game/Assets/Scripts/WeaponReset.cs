@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameScript : MonoBehaviour {
+public class WeaponReset : MonoBehaviour {
 
     [SerializeField]
     GameObject[] weapons;

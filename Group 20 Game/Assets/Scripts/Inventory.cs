@@ -7,12 +7,16 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     GameObject[] weapons;
 
+    [SerializeField]
+    bool[] Keys;
+
     int inUse;
     void Update()
     {
         getButtonNumber();
     }
-
+    
+    //Weapons
     public void addAmmo(int addAmmo, int wp)
     {
         if(inUse == wp)
@@ -79,5 +83,16 @@ public class Inventory : MonoBehaviour
                 inUse = selected;
             }
         }
+    }
+
+    //Keys
+    public bool putKey(int pos)
+    {
+        return Keys[pos];
+    }
+
+    public void getKey(int pos)
+    {
+        Keys[pos] = true;
     }
 }
