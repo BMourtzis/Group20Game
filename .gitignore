@@ -2,4 +2,9 @@
 ### Written by Guan
 ### Refer to: https://unity3d.com/learn/tutorials/modules/beginner/architecture/folders-in-version-control
 
+/*/Temp
 /*/Library
+/*/Obj
+
+/*/*.csproj
+/*/*.sln
