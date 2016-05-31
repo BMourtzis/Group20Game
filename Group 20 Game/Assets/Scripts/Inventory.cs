@@ -13,23 +13,23 @@ public class Inventory : MonoBehaviour
         getButtonNumber();
     }
 
-    public GameObject getWeapon(int item)
+    public void addAmmo(int addAmmo, int wp)
     {
-        return weapons[item - 1];
+        if(inUse == wp)
+        {
+            GetComponent<PlayerWeaponsScript>().addAmmo(addAmmo);
+        }
+        else
+        {
+            weapons[wp].GetComponent<WeaponScript>().addAmmo(addAmmo);
+        }
     }
 
-    public void addWeapon(GameObject weapon)
+    public void addWeapon(int wp)
     {
-        for(int i = 0; i < weapons.Length; i++)
-        {
-            if(weapons[i] == null)
-            {
-                weapons[i] = weapon;
-                changeWeapon(weapons[i], inUse);
-                inUse = i;
-                break;
-            }
-        }
+        weapons[wp].GetComponent<WeaponScript>().Enable();
+        changeWeapon(weapons[wp], inUse);
+        inUse = wp;
     }
 
     void changeWeapon(GameObject weapon, int prev)
@@ -47,34 +47,37 @@ public class Inventory : MonoBehaviour
         GameObject newWeapon = null;
         if (Input.GetButtonDown("Number1"))
         {
-            newWeapon = getWeapon(1);
+            newWeapon = weapons[0];
             selected = 0;
         }
         else if (Input.GetButtonDown("Number2"))
         {
-            newWeapon = getWeapon(2);
+            newWeapon = weapons[1];
             selected = 1;
         }
         else if(Input.GetButtonDown("Number3"))
         {
-            newWeapon = getWeapon(3);
+            newWeapon = weapons[2];
             selected = 2;
         }
         else if (Input.GetButtonDown("Number4"))
         {
-            newWeapon = getWeapon(4);
+            newWeapon = weapons[3];
             selected = 3;
         }
         else if (Input.GetButtonDown("Number5"))
         {
-            newWeapon = getWeapon(5);
+            newWeapon = weapons[4];
             selected = 4;
         }
 
-        if(newWeapon != null && weapons[inUse] != newWeapon)
+        if(newWeapon != null)
         {
-            changeWeapon(newWeapon,inUse);
-            inUse = selected;
+            if (newWeapon.GetComponent<WeaponScript>().getEnabled() && weapons[inUse] != newWeapon)
+            {
+                changeWeapon(newWeapon, inUse);
+                inUse = selected;
+            }
         }
     }
 }
