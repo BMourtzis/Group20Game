@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21217858}
   - 50: {fileID: 5016550}
   - 58: {fileID: 5858930}
-  - 114: {fileID: 11459594}
+  - 114: {fileID: 11453032}
   m_Layer: 0
   m_Name: prop_bomb
   m_TagString: Enemy
@@ -62,7 +62,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.42666668
---- !u!114 &11459594
+--- !u!114 &11453032
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -70,10 +70,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 164966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91d5abedc9aa4eb42bbc54abdefbcf7e, type: 3}
+  m_Script: {fileID: 11500000, guid: d2195bb8e75ed5e47902d0d0f142a131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPoints: 50
+  HealthPoints: 20
 --- !u!212 &21217858
 SpriteRenderer:
   m_ObjectHideFlags: 1

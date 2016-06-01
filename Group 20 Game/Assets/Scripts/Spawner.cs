@@ -17,12 +17,12 @@ public class Spawner : MonoBehaviour {
 
 	IEnumerator Spawn()
 	{
-		while (true) 
-		{
-			Vector3 spawnPosition = new Vector3 (Random.Range (-1, 1), transform.position.y, 0);
-			Quaternion spawnRotation = Quaternion.identity;
-			Instantiate (bomb, spawnPosition, spawnRotation);
-		}
-		yield return new WaitForSeconds (1);
+		Vector3 spawnPosition;
+		//while (true) {
+			spawnPosition = new Vector3 (Random.Range (-1, 1), transform.position.y, 0);
+		//}
+		Quaternion spawnRotation = Quaternion.identity;
+		Instantiate (bomb, spawnPosition, spawnRotation);
+		yield return new WaitForSeconds (1.0f);
 	}
 }
