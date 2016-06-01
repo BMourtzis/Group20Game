@@ -1,0 +1,19 @@
+﻿Revert "Merge remote-tracking branch 'origin/Guan's-Level' into Guan's-Level"
+
+This reverts commit 89eb09edb43833b9d6cc92bf31ac0acc67145e5d, reversing
+changes made to b123fb445de9bb61df0a218f3fb2d3dec1003797.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Guan's-Level
+# Your branch is up-to-date with 'origin/Guan's-Level'.
+#
+# Changes to be committed:
+#	deleted:    Group 20 Game/Assets/Prefabs/Weapons/WW2 Rifle.prefab
+#	deleted:    Group 20 Game/Assets/Prefabs/Weapons/WW2 Rifle.prefab.meta
+#	deleted:    Group 20 Game/Assets/Sprites/k98k.png
+#	deleted:    Group 20 Game/Assets/Sprites/k98k.png.meta
+#	modified:   Group 20 Game/Assets/_Scenes/Guan's Level.unity
+#	modified:   Group 20 Game/Group 20 Game.userprefs
+#
+
