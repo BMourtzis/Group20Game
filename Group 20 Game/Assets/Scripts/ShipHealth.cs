@@ -19,17 +19,28 @@ public class ShipHealth : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		// Deals with win or loss:
 		bombs = spawner.GetComponent<Spawner>().getBombs();
 		if (healthPoints <= 0) {
-			healthPoints = 0;
-			endText.text = "Your ship was destroyed!";
-			StartCoroutine (restartLevel ());
+			failLevel ();
 		}
 		else if (bombs == 0) {
-			endText.color = new Color(0, 201, 84);
-			endText.text = "You saved your ship!";
+			winLevel ();
 		}
+
 		healthText.text = "Ship HP: " + healthPoints;
+	}
+
+	void failLevel() {
+		healthPoints = 0;
+		endText.text = "Your ship was destroyed!";
+		StartCoroutine (restartLevel ());
+	}
+
+	void winLevel() {
+		endText.color = new Color (0, 201, 84);
+		endText.text = "You saved your ship!";
+		// Move to Next Level
 	}
 
 	IEnumerator restartLevel() {
