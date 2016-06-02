@@ -1,85 +1,86 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &178696
+--- !u!1 &120790
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 444186}
-  - 212: {fileID: 21219584}
-  - 61: {fileID: 6197616}
-  - 50: {fileID: 5090492}
-  - 114: {fileID: 11462858}
+  - 4: {fileID: 494626}
   m_Layer: 0
-  m_Name: Ammo Pack
+  m_Name: EndOfBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &444186
+--- !u!1 &195084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 462462}
+  - 212: {fileID: 21289476}
+  - 114: {fileID: 11482910}
+  m_Layer: 0
+  m_Name: WW2Rifle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &462462
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178696}
+  m_GameObject: {fileID: 195084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.639, y: -0.71, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
-  m_Children: []
+  m_LocalPosition: {x: 40.78321, y: -1.9896184, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 494626}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5090492
-Rigidbody2D:
-  serializedVersion: 2
+--- !u!4 &494626
+Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178696}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &6197616
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178696}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 3, y: 2.5}
---- !u!114 &11462858
+  m_GameObject: {fileID: 120790}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.773, y: 0.085, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462462}
+  m_RootOrder: 0
+--- !u!114 &11482910
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178696}
+  m_GameObject: {fileID: 195084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc2f765a01416846a350b03d274f6ed, type: 3}
+  m_Script: {fileID: 11500000, guid: f1e5da9c50fb71149af3fdbb72d97a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ammo: 2800000064000000000000000000000000000000
---- !u!212 &21219584
+  Projectile: {fileID: 111202, guid: 4a31ec27f7af0e741a4f129436b17468, type: 2}
+  Ammo: 30
+  FireRate: 2
+  EndOfBarrel: {fileID: 494626}
+  ProjectileSpeed: 30
+  NumberOfProjectiles: 1
+  AreaOfSpread: 0
+--- !u!212 &21289476
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178696}
+  m_GameObject: {fileID: 195084}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -100,7 +101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1024582385
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f28cca3aa9289483b8160967b37ef4c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b57113b9c7d3e74a95f8157c0f96d63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,5 +114,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 178696}
+  m_RootGameObject: {fileID: 195084}
   m_IsPrefabParent: 1
