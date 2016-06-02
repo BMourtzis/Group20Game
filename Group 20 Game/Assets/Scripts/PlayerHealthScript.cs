@@ -5,6 +5,8 @@ public class PlayerHealthScript : MonoBehaviour {
 
     [SerializeField]
     float HealthPoints;
+    [SerializeField]
+    HealthTextScript text;
 
     // Update is called once per frame
     void Update()
@@ -18,12 +20,15 @@ public class PlayerHealthScript : MonoBehaviour {
 			HealthPoints = 0;
             //End game;
         }
+
+        text.setHealth(HealthPoints);
     }
 
     //Decreases the Health of the Player
     public void TakeDamage(float damage, bool right)
     {
         HealthPoints -= damage;
+        text.takeDamage(HealthPoints);
         Vector2 force;
         if (right) { force = transform.right; }
         else { force = transform.right*-1; }
@@ -33,6 +38,7 @@ public class PlayerHealthScript : MonoBehaviour {
     public void TakeDamage(float damage)
     {
         HealthPoints -= damage;
+        text.takeDamage(HealthPoints);
     }
 
     // Used in Guan's level to get hurt by bomb.
@@ -51,10 +57,5 @@ public class PlayerHealthScript : MonoBehaviour {
     public void RecoverHealth(float health)
     {
         HealthPoints += health;
-    }
-
-    public float getHealth()
-    {
-        return HealthPoints;
     }
 }
