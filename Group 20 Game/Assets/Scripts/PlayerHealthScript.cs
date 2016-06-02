@@ -30,8 +30,13 @@ public class PlayerHealthScript : MonoBehaviour {
         GetComponent<Rigidbody2D>().AddForce(force * 400);
     }
 
-	// Used in Guan's level to get hurt by bomb.
-	void OnCollisionEnter2D (Collision2D bomb)
+    public void TakeDamage(float damage)
+    {
+        HealthPoints -= damage;
+    }
+
+    // Used in Guan's level to get hurt by bomb.
+    void OnCollisionEnter2D (Collision2D bomb)
 	{
 		bool right;
 		if (Random.Range (0.0f, 1.0f) < 0.5f)

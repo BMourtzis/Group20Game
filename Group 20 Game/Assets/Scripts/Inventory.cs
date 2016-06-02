@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
         {
             GetComponent<PlayerWeaponsScript>().addAmmo(addAmmo);
         }
-        else
+        else if(weapons[wp] != null)
         {
             weapons[wp].GetComponent<WeaponScript>().addAmmo(addAmmo);
         }
@@ -83,6 +83,11 @@ public class Inventory : MonoBehaviour
                 inUse = selected;
             }
         }
+    }
+
+    public GameObject[] getWeapons()
+    {
+        return weapons;
     }
 
     //Keys

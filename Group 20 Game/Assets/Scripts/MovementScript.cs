@@ -185,11 +185,20 @@ public class MovementScript : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "CheckPoint")
+        {
+            resetPoint = other.transform;
+        }
+    }
+
     void checkForReset()
     {
         if(transform.position.y < -25)
         {
             transform.position = resetPoint.position;
+            GetComponent<PlayerHealthScript>().TakeDamage(10);
 
         }
     }
