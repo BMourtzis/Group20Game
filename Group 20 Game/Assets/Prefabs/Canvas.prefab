@@ -68,6 +68,7 @@ GameObject:
   - 114: {fileID: 11498494}
   - 114: {fileID: 11403352}
   - 114: {fileID: 11439106}
+  - 95: {fileID: 9503514}
   m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
@@ -75,6 +76,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &9503514
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189930}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01e273847e8a842419d5e78c8e5e229c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11403352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Ammo: '
 --- !u!114 &11439106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -264,7 +282,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Health: '
 --- !u!114 &11499570
 MonoBehaviour:
   m_ObjectHideFlags: 1
