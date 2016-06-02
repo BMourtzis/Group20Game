@@ -1314,6 +1314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthPoints: 100
+  text: {fileID: 1735377947}
 --- !u!61 &2013581917
 BoxCollider2D:
   m_ObjectHideFlags: 0
