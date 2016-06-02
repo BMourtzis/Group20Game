@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour {
 	{
 		// Bombs will drop quicker and more often as time progresses.
 		while (numOfBombs > 0) {
-			Vector3 spawnPosition = new Vector3 (Random.Range (-9.0f, 4.0f) + transform.position.x, transform.position.y, 0);
+			Vector3 spawnPosition = new Vector3 (Random.Range (-3, 94), transform.position.y, 0);
 			if (true) {
 				GameObject bombClone = (GameObject) Instantiate (bomb, spawnPosition, transform.rotation);
 				bombClone.GetComponent<Rigidbody2D> ().drag = linearDrag;
