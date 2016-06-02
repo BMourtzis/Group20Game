@@ -15,6 +15,8 @@ public class ShipHealth : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		if (healthPoints < 0)
+			healthPoints = 0;
 		healthText.text = "Ship HP: " + healthPoints;
 	}
 

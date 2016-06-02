@@ -25,4 +25,11 @@ public class BombHealth : MonoBehaviour
 	{
 		HealthPoints += health;
 	}
+
+	void OnCollisionEnter2D (Collision2D ship)
+	{
+		if (ship.gameObject.tag == "ground") {
+			Destroy (this.gameObject);
+		}
+	}
 }
