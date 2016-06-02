@@ -2,32 +2,20 @@
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class PlayerWeaponsScript : MonoBehaviour {
+public class PlayerWeaponsScript : MonoBehaviour
+{
+    public float fireRate;
 
-    [SerializeField]
-    float fireRate;
-
-    private bool c_Fire;
     GameObject weapon;
-    
+    float frameTime;
+    float fps;
 
-	// Use this for initialization
-	void Start ()
-    {
-        if(weapon != null)
-        {
-            InvokeRepeating("Fire", 0.0f, 1.0f / weapon.GetComponent<WeaponScript>().FireRate);
-        }
-    }
-	
 	// Update is called once per frame
 	void Update ()
     {
-        c_Fire = false;
-
-        if(CrossPlatformInputManager.GetAxis("Fire1") != 0)
+        if(Input.GetButton("Fire1") && weapon != null)
         {
-            c_Fire = true;
+            Fire();
         }
     }
 
@@ -42,8 +30,7 @@ public class PlayerWeaponsScript : MonoBehaviour {
 
         weapon = (GameObject)Instantiate(newWeapon, transform.position, transform.rotation);
         weapon.transform.parent = transform;
-        CancelInvoke();
-        InvokeRepeating("Fire", 0.0f, 1.0f / newWeapon.GetComponent<WeaponScript>().FireRate);
+        fps = 1.0f / weapon.GetComponent<WeaponScript>().FireRate;
 
         return oldWeapon;
     }
@@ -60,9 +47,11 @@ public class PlayerWeaponsScript : MonoBehaviour {
 
     void Fire()
     {
-        if(c_Fire)
+        float dTime = Time.time - frameTime;
+        if(dTime >= fps)
         {
             weapon.GetComponent<WeaponScript>().Fire();
+            frameTime = Time.time;
         }
     }
 

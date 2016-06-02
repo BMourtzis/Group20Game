@@ -11,7 +11,14 @@ public class AmmoTextScript : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("Weapon") != null)
         {
             int ammo = GameObject.FindGameObjectWithTag("Weapon").GetComponent<WeaponScript>().getAmmo();
-            GetComponent<Text>().text = "Ammo: " + ammo;
+            if(ammo > 0)
+            {
+                GetComponent<Text>().text = "Ammo: " + ammo;
+            }
+            else
+            {
+                GetComponent<Text>().text = "Ammo: Empty";
+            }
         }
 	}
 }
