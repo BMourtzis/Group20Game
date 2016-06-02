@@ -178,8 +178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthPoints: 20
-  explosion: {fileID: 0}
-  effects: []
 --- !u!198 &19835636
 ParticleSystem:
   m_ObjectHideFlags: 1

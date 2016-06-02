@@ -3,19 +3,18 @@ using System.Collections;
 
 public class AmmoPackScript : ItemScript
 {
-
-    [SerializeField]
-    int Ammo;
-    [SerializeField]
-    int weapon;
+    public int[] Ammo;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Inventory>().addAmmo(Ammo, weapon);
+            for(int i =0; i<Ammo.Length; i++)
+            {
+                other.GetComponent<Inventory>().addAmmo(Ammo[i], i);
+                Ammo[i] = 0;
+            }
             Destroy(gameObject);
-            Ammo = 0;
         }
     }
 }
