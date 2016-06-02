@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerHealthScript : MonoBehaviour {
+public class PlayerHealthScript : MonoBehaviour
+{
 
     [SerializeField]
     float HealthPoints;

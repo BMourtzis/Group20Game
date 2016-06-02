@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthPoints: 100
+  text: {fileID: 0}
 --- !u!114 &11496934
 MonoBehaviour:
   m_ObjectHideFlags: 1
