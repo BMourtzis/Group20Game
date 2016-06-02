@@ -23,7 +23,7 @@ public class TutorialText : MonoBehaviour
 
     public void DoubleJumpTip()
     {
-        text.text = "Jump once and then again to jump longer";
+        text.text = "For higher and longer obstacles, you can double jump";
     }
 
     public void EnemyTip()
@@ -60,6 +60,6 @@ public class TutorialText : MonoBehaviour
 
     public void End()
     {
-        text.text = "Now move to the your left to reach to the next level   ";
+        text.text = "Now move to the your right to reach to end of the level";
     }
 }

@@ -16,6 +16,8 @@ TagManager:
   - Weapon
   - Projectile
   - TutorialText
+  - Bomb
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
