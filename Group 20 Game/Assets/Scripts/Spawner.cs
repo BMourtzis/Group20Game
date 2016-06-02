@@ -59,4 +59,8 @@ public class Spawner : MonoBehaviour {
 		if (dropDelay > minDelay)
 			dropDelay -= dropDelayReduction;
 	}
+
+	public int getBombs() {
+		return numOfBombs;
+	}
 }

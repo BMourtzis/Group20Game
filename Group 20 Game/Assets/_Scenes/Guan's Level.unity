@@ -480,11 +480,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 423266, guid: eacc8e2278e33634db2a6065ccea808a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 32.92
+      value: 38.86
       objectReference: {fileID: 0}
     - target: {fileID: 423266, guid: eacc8e2278e33634db2a6065ccea808a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.68
+      value: -1.88
       objectReference: {fileID: 0}
     - target: {fileID: 423266, guid: eacc8e2278e33634db2a6065ccea808a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -508,7 +508,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423266, guid: eacc8e2278e33634db2a6065ccea808a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800292, guid: eacc8e2278e33634db2a6065ccea808a, type: 2}
+      propertyPath: m_Radius
+      value: 0.6688843
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eacc8e2278e33634db2a6065ccea808a, type: 2}
@@ -891,7 +895,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 20
   healthText: {fileID: 51118885}
-  endText: {fileID: 0}
+  endText: {fileID: 2042127391}
+  spawner: {fileID: 206472463}
 --- !u!1 &1784726869
 GameObject:
   m_ObjectHideFlags: 0
