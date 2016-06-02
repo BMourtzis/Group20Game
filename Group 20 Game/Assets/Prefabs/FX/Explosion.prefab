@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9423b1366597a4aaa9bcb4a73bcf3cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingLayerName: Sparks
+  sortingLayerName: Foreground
   sortingOrder: 1
 --- !u!198 &19800000
 ParticleSystem:

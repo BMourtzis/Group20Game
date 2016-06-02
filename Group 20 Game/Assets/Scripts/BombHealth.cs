@@ -4,8 +4,6 @@ using System.Collections;
 public class BombHealth : MonoBehaviour
 {
 	public float HealthPoints;
-	public GameObject explosion;
-	public ParticleSystem[] effects;
 
 	// Update is called once per frame
 	void Update()
