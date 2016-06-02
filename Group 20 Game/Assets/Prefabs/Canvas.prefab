@@ -102,6 +102,7 @@ GameObject:
   - 114: {fileID: 11498494}
   - 114: {fileID: 11403352}
   - 114: {fileID: 11439106}
+  - 95: {fileID: 9537628}
   m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
@@ -109,6 +110,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &9537628
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189930}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01e273847e8a842419d5e78c8e5e229c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11403352
 MonoBehaviour:
   m_ObjectHideFlags: 1
