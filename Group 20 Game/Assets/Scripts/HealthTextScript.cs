@@ -2,29 +2,19 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class HealthTextScript : MonoBehaviour
-{
-    Animator anim;
-    float health;
-    Text text;
+public class HealthTextScript : MonoBehaviour {
 
-    void Start()
+    PlayerHealthScript health;
+
+	// Use this for initialization
+	void Start ()
     {
-        anim = GetComponent<Animator>();
-        text = GetComponent<Text>();
-    }
-
-    public void takeDamage(float newHealth)
+        health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthScript>();
+	}
+	
+	// Update is called once per frame
+	void Update ()
     {
-        health = newHealth;
-        text.text = "Health: " + (int)health;
-        anim.SetBool("takeDamage", true);
-
-    }
-
-    public void setHealth(float newHealth)
-    {
-        health = newHealth;
-        text.text = "Health: " + (int)health;
-    }
+        GetComponent<Text>().text = "Health: " + (int)health.getHealth();
+	}
 }

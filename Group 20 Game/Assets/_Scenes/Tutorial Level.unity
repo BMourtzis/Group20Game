@@ -703,33 +703,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48b25e3312020ac4aa36752a2f9bae79, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &428198209 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 189930, guid: 92e48c478e433ee41945a158b4831cd4, type: 2}
-  m_PrefabInternal: {fileID: 1783843273}
---- !u!95 &428198211
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 428198209}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 01e273847e8a842419d5e78c8e5e229c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &428198213 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11403352, guid: 92e48c478e433ee41945a158b4831cd4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1783843273}
-  m_Script: {fileID: 11500000, guid: cdea36393ca5be74e988012a4cc04e83, type: 3}
 --- !u!1 &432403945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,10 +1419,6 @@ Prefab:
       propertyPath: resetPoint
       value: 
       objectReference: {fileID: 1823277271}
-    - target: {fileID: 11493274, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
-      propertyPath: text
-      value: 
-      objectReference: {fileID: 428198213}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
   m_IsPrefabParent: 0
@@ -2726,10 +2695,6 @@ Prefab:
     - target: {fileID: 22401610, guid: 92e48c478e433ee41945a158b4831cd4, type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11498494, guid: 92e48c478e433ee41945a158b4831cd4, type: 2}
-      propertyPath: m_Text
-      value: 'Health: 100'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92e48c478e433ee41945a158b4831cd4, type: 2}

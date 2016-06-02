@@ -9,6 +9,16 @@ public class PlayerWeaponsScript : MonoBehaviour {
 
     private bool c_Fire;
     GameObject weapon;
+    
+
+	// Use this for initialization
+	void Start ()
+    {
+        if(weapon != null)
+        {
+            InvokeRepeating("Fire", 0.0f, 1.0f / weapon.GetComponent<WeaponScript>().FireRate);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
