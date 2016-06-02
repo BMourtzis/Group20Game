@@ -464,11 +464,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 440394, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.58
+      value: 38.86
       objectReference: {fileID: 0}
     - target: {fileID: 440394, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 19.55
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 440394, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
       propertyPath: m_LocalPosition.z
@@ -513,6 +513,18 @@ Prefab:
     - target: {fileID: 2033808, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
       propertyPath: m_BackGroundColor.b
       value: 0.5441177
+      objectReference: {fileID: 0}
+    - target: {fileID: 21299618, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -1783731295
+      objectReference: {fileID: 0}
+    - target: {fileID: 442922, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 442922, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
