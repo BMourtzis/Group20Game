@@ -1,11 +1,13 @@
 ﻿// This script was developed by Guan for the level 'Fall of Guam'
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
 	public GameObject bomb;
+	public Text bombRemainder;
 	public float dragReduction;
 	public float dropDelayReduction;
 	public float minDrag;
@@ -34,6 +36,7 @@ public class Spawner : MonoBehaviour {
 				bombClone.GetComponent<Rigidbody2D> ().drag = linearDrag;
 			}
 			numOfBombs -= 1;
+			bombRemainder.text = "Bombs: " + numOfBombs;
 			nextWave ();
 
 			yield return new WaitForSeconds (dropDelay);
