@@ -4,13 +4,16 @@ using System.Collections;
 public class BombHealth : MonoBehaviour
 {
 	public float HealthPoints;
+	public GameObject explosion;
+	public ParticleSystem[] effects;
 
 	// Update is called once per frame
 	void Update()
 	{
 		if (HealthPoints < 1)
 		{
-			Destroy(transform.gameObject);
+			HT_Explode explodeScript = GetComponent<HT_Explode> ();
+			explodeScript.explodeNow ();
 		}
 	}
 
@@ -24,12 +27,5 @@ public class BombHealth : MonoBehaviour
 	public void RecoverHealth(float health)
 	{
 		HealthPoints += health;
-	}
-
-	void OnCollisionEnter2D (Collision2D ship)
-	{
-		if (ship.gameObject.tag == "ground") {
-			Destroy (this.gameObject);
-		}
 	}
 }
