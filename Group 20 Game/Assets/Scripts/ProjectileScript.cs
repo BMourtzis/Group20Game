@@ -25,7 +25,7 @@ public class ProjectileScript : MonoBehaviour {
     {
         if(!(other.gameObject.tag == "Player") && !(other.gameObject.tag == "Projectile"))
         {
-            if (other.gameObject.tag == "Enemy")
+			if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Bomb")
             {
                 other.gameObject.SendMessage("TakeDamage", Damage);
             }
