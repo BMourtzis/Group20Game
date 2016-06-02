@@ -27,7 +27,7 @@ GameObject:
   - 114: {fileID: 11482910}
   m_Layer: 0
   m_Name: WW2Rifle
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 111202, guid: 4a31ec27f7af0e741a4f129436b17468, type: 2}
-  Ammo: 30
+  Ammo: 430
   FireRate: 2
   EndOfBarrel: {fileID: 494626}
   ProjectileSpeed: 30

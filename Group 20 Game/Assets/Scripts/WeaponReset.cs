@@ -1,38 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class WeaponReset : MonoBehaviour
 {
+    [SerializeField]
+    public WeaponSet[] weaponSet;
 
     // Use this for initialization
     void Start ()
     {
         GameObject[] weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().getWeapons();
-        int initialAmmo = 0;
 
 	    for(int i = 0; i < weapons.Length && weapons[i] != null; i++)
         {
-            weapons[i].GetComponent<WeaponScript>().Disable();
-            switch(i)
+            if(weaponSet[i].Enabled)
             {
-                case 0:
-                    initialAmmo = 48;
-                    break;
-                case 1:
-                    initialAmmo = 100;
-                    break;
-                case 2:
-                    initialAmmo = 0;
-                    break;
-                case 3:
-                    initialAmmo = 0;
-                    break;
-                case 4:
-                    initialAmmo = 0;
-                    break;
-
+                weapons[i].GetComponent<WeaponScript>().Enable();
             }
-            weapons[i].GetComponent<WeaponScript>().setAmmo(initialAmmo);
+            else
+            {
+                weapons[i].GetComponent<WeaponScript>().Disable();
+            }
+           
+            weapons[i].GetComponent<WeaponScript>().setAmmo(weaponSet[i].Ammo);
         }
 	}
+}
+
+[Serializable]
+public class WeaponSet
+{
+    public bool Enabled;
+    public int Ammo;
 }
