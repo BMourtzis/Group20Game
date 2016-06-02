@@ -8,7 +8,7 @@ public class ShipHealth : MonoBehaviour {
 	public Text healthText;
 
 	void OnCollisionEnter2D (Collision2D bomb) {
-		if (bomb.gameObject.tag == "Enemy") {
+		if (bomb.gameObject.tag == "Bomb") {
 			healthPoints -= 1;
 		}
 	}
