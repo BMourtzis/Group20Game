@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TutorialScripts\enemyJump.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerHealthScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\TutorialScripts\jump.cs" Line="4" Column="1" />
+      <File FileName="Assets\Scripts\PlayerHealthScript.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\TutorialScripts\jump.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\TutorialScripts\enemyJump.cs" Line="4" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
