@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 111202, guid: 4a31ec27f7af0e741a4f129436b17468, type: 2}
-  Ammo: 430
-  FireRate: 2
+  Ammo: 50
+  FireRate: 1
   EndOfBarrel: {fileID: 494626}
   ProjectileSpeed: 30
   NumberOfProjectiles: 1
