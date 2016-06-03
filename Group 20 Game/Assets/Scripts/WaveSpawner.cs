@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class WaveSpawner : MonoBehaviour
@@ -12,15 +13,15 @@ public class WaveSpawner : MonoBehaviour
 
 	void Start()
 	{
-		enemies = 10;
+		enemies = 40;
 		StartCoroutine(Spawn());
 	}
 
 	void Update() {
 		
-		if (searchAlive() == false)
-			guideText.text = "You killed them all";
-		enemyRemainder.text = "Enemies: " + GameObject.FindGameObjectsWithTag ("Enemy").Length;
+		if (searchAlive () == false && enemies <= 0)
+			winGame ();
+		enemyRemainder.text = "Enemies: " + GameObject.FindGameObjectsWithTag ("Enemy").Length/2;
 	}
 
 	bool searchAlive() {
@@ -29,13 +30,19 @@ public class WaveSpawner : MonoBehaviour
 		return true;
 	}
 
+	void winGame()
+	{
+		guideText.text = "You killed them all";
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+	}
+
 	IEnumerator Spawn()
 	{
-		guideText.text = "Limited ammo, loads of enemies.";
+		guideText.text = "Loads of ammo, loads of enemies.";
 		yield return new WaitForSeconds(4);
-		guideText.text = "Collect ammo that randomly fall from the sky.";
-		yield return new WaitForSeconds(4);
-		guideText.text = "Good luck";
+		guideText.text = "Kill them all.";
+		yield return new WaitForSeconds(2);
+		guideText.text = "Have fun";
 		yield return new WaitForSeconds(2);
 		guideText.text = "";
 
@@ -48,7 +55,7 @@ public class WaveSpawner : MonoBehaviour
 				Instantiate(enemy, spawnPositionLeft, transform.rotation);
 				Instantiate(enemy, spawnPositionRight, transform.rotation);
 			}
-			enemies -= 1;
+			enemies -= 2;
 			yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
 		}
 	}
