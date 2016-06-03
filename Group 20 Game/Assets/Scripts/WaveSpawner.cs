@@ -19,6 +19,7 @@ public class WaveSpawner : MonoBehaviour
 	}
 
 	void Update() {
+		
 		if (alive < 0)
 			guideText.text = "You killed them all";
 	}

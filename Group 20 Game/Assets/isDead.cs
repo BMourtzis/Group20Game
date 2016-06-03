@@ -12,7 +12,7 @@ public class isDead : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (this.GetComponent<EnemyHealth> ().getHealth () < 0)
-			controller.GetComponent<WaveSpawner>().setAlive(1);
+		if (this.GetComponent<EnemyHealth> ().getHealth () < 1)
+			controller.GetComponent<WaveSpawner> ().setAlive(1);
 	}
 }
