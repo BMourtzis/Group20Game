@@ -4,17 +4,18 @@ using System.Collections;
 public class DoorScript : MonoBehaviour
 {
     [SerializeField]
-    [Range(0, 4)]
+    [Range(0, 10)]
     int key;
+    [SerializeField]
+    Sprite newDoorSprite;
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.GetComponent<Inventory>().putKey(key))
         {
-            if(other.GetComponent<Inventory>().putKey(key))
-            {
-                Destroy(gameObject);
-            }
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().sprite = newDoorSprite;
         }
     }
 }
