@@ -32,7 +32,6 @@ public class GameScript : MonoBehaviour {
                     break;
 
             }
-            weapons[i].GetComponent<WeaponScript>().setAmmo(initialAmmo);
         }
 	}
 }

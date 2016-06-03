@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSet:
-  - Enabled: 0
-    Ammo: 40
+  - Enabled: 1
+    Ammo: 48
   - Enabled: 0
     Ammo: 100
   - Enabled: 0

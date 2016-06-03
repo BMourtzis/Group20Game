@@ -11,10 +11,9 @@ public class WeaponReset : MonoBehaviour
     void Start ()
     {
         GameObject[] weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().getWeapons();
-
 	    for(int i = 0; i < weapons.Length && weapons[i] != null; i++)
         {
-            if(weaponSet[i].Enabled)
+            if (weaponSet[i].Enabled)
             {
                 weapons[i].GetComponent<WeaponScript>().Enable();
             }
@@ -22,7 +21,7 @@ public class WeaponReset : MonoBehaviour
             {
                 weapons[i].GetComponent<WeaponScript>().Disable();
             }
-           
+
             weapons[i].GetComponent<WeaponScript>().setAmmo(weaponSet[i].Ammo);
         }
 	}
