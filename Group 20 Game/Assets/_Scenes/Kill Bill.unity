@@ -265,11 +265,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 430140, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.73
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 430140, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 13.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 430140, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
       propertyPath: m_LocalPosition.z
@@ -281,7 +281,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 430140, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 430140, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
       propertyPath: m_LocalRotation.z
@@ -289,7 +289,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 430140, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 430140, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
       propertyPath: m_RootOrder
@@ -1303,7 +1303,7 @@ GameObject:
   - 114: {fileID: 1619590912}
   m_Layer: 0
   m_Name: Monster Spawner
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7864edb87c116a242986544e409b7951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 107676, guid: 150727cc55b75c14fa01f36dede285d8, type: 2}
+  enemy: {fileID: 181372, guid: 150727cc55b75c14fa01f36dede285d8, type: 2}
   enemyRemainder: {fileID: 489296789}
   guideText: {fileID: 120450858}
 --- !u!4 &1619590913
