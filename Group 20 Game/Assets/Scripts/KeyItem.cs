@@ -4,7 +4,7 @@ using System.Collections;
 public class KeyItem : MonoBehaviour
 {
     [SerializeField]
-    [Range(0,4)]
+    [Range(0,10)]
     int key;
 
     void OnTriggerEnter2D(Collider2D other)
