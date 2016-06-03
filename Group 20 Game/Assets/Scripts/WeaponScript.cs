@@ -20,12 +20,6 @@ public class WeaponScript : MonoBehaviour {
     [SerializeField]
     float AreaOfSpread;
 
-<<<<<<< HEAD
-=======
-	//public AudioClip gunSound;
-
-
->>>>>>> refs/remotes/origin/Guan's-Level
     bool Enabled;
 
     void FixedUpdate()
