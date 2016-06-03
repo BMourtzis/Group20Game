@@ -34,6 +34,7 @@ public class PlayerHealthScript : MonoBehaviour
         if (right) { force = transform.right; }
         else { force = transform.right * -1; }
         GetComponent<Rigidbody2D>().AddForce(force * 400);
+        GetComponent<MovementScript>().pushedBack();
     }
 
     public void TakeDamage(float damage)
