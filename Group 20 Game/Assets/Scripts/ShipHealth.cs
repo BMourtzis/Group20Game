@@ -45,10 +45,16 @@ public class ShipHealth : MonoBehaviour {
 			endText.text = "You saved your ship!";
 		}
 		// Move to Next Level
+		StartCoroutine (nextLevel());
 	}
 
 	IEnumerator restartLevel() {
 		yield return new WaitForSeconds (3);
 		Application.LoadLevel (Application.loadedLevel);
+	}
+
+	IEnumerator nextLevel() {
+		yield return new WaitForSeconds (3);
+		Application.LoadLevel (4);
 	}
 }
