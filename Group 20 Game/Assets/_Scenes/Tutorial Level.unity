@@ -354,6 +354,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 149066, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d60642b39cc6da1478dd813ddd432d1b, type: 2}
   m_IsPrefabParent: 0
@@ -1435,7 +1439,7 @@ Prefab:
     - target: {fileID: 11404808, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
       propertyPath: resetPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2028806924}
     - target: {fileID: 11493274, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
       propertyPath: text
       value: 
@@ -3311,6 +3315,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30875d36e5819734791d7e4498a489fb, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &2028806924 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 430140, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
+  m_PrefabInternal: {fileID: 1165338244}
 --- !u!1001 &2046695151
 Prefab:
   m_ObjectHideFlags: 0
