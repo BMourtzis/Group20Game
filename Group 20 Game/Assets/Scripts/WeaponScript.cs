@@ -20,7 +20,6 @@ public class WeaponScript : MonoBehaviour {
     [SerializeField]
     float AreaOfSpread;
 
-
     bool Enabled;
 
     void FixedUpdate()

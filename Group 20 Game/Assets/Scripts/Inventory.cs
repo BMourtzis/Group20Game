@@ -10,7 +10,18 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     bool[] Keys = new bool[10];
 
-    int inUse;
+    int inUse = -1;
+
+    void Start()
+    {
+        GameObject newWeapon = weapons[0];
+        if (newWeapon.GetComponent<WeaponScript>().getEnabled() && getWeaponInUse() != newWeapon)
+        {
+            changeWeapon(newWeapon, inUse);
+            inUse = 0;
+        }
+    }
+
     void Update()
     {
         getButtonNumber();
@@ -77,12 +88,19 @@ public class Inventory : MonoBehaviour
 
         if(newWeapon != null)
         {
-            if (newWeapon.GetComponent<WeaponScript>().getEnabled() && weapons[inUse] != newWeapon)
+            if (newWeapon.GetComponent<WeaponScript>().getEnabled() && getWeaponInUse() != newWeapon)
             {
                 changeWeapon(newWeapon, inUse);
                 inUse = selected;
             }
         }
+    }
+
+    public GameObject getWeaponInUse()
+    {
+        if(inUse != -1)
+            return weapons[inUse];
+        return null;
     }
 
     public GameObject[] getWeapons()
