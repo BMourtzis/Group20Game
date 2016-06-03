@@ -1,12 +1,10 @@
-﻿<Properties StartupItem="Group 20 Game.CSharp.Plugins.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BombHealth.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerHealthScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\TutorialScripts\doublejump.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HT_Explode.cs" Line="23" Column="24" />
-      <File FileName="Assets\Scripts\ProjectileScript.cs" Line="28" Column="74" />
-      <File FileName="Assets\Scripts\BombHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerHealthScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerHealthScript.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\TutorialScripts\jump.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TutorialScripts\enemyJump.cs" Line="4" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
