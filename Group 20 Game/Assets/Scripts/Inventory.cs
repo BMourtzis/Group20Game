@@ -24,6 +24,11 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+        GameObject wp = GetComponent<PlayerWeaponsScript>().getCurrentWeapon();
+        if (wp != null)
+        {
+            weapons[inUse].GetComponent<WeaponScript>().setAmmo(wp.GetComponent<WeaponScript>().getAmmo());
+        }
         getButtonNumber();
     }
     

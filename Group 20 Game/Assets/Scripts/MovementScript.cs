@@ -36,9 +36,11 @@ public class MovementScript : MonoBehaviour
     const float k_Half = 0.5f;
     float c_TurnAmount;
     Vector3 c_GroundNormal;
+
     bool doubleJump;
     bool damageTaken;
     bool right;
+    float timeToWalk;
 
 
     void Start()
@@ -47,6 +49,7 @@ public class MovementScript : MonoBehaviour
         c_Rigidbody = GetComponent<Rigidbody2D>();
         c_Animator = GetComponent<Animator>();
         doubleJump = false;
+        damageTaken = false;
     }
 
     void Update()
@@ -55,39 +58,46 @@ public class MovementScript : MonoBehaviour
         {
             c_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
         }
+        
+        if(damageTaken && Time.time > timeToWalk)
+        {
+            damageTaken = false;
+        }
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        c_Animator = GetComponent<Animator>();
-        checkForReset();
-        c_Run = false;
-        float h = CrossPlatformInputManager.GetAxis("Horizontal");
-
-        if(h != 0)
+        if (!damageTaken)
         {
-            c_Run = true;
+            checkForReset();
+            c_Run = false;
+            float h = CrossPlatformInputManager.GetAxis("Horizontal");
+
+            if (h != 0)
+            {
+                c_Run = true;
+            }
+
+            c_Move = Vector3.right * h * 0.1f;
+
+
+            // If running then increases the movement speed and the running animation
+            if (CrossPlatformInputManager.GetButton("Run"))
+            {
+                MoveSpeedMultiplier = 1f;
+                //AnimSpeedMultiplier = 1.25f;
+            }
+            else
+            {
+                MoveSpeedMultiplier = 2f;
+                //AnimSpeedMultiplier = 1.0f;
+            }
+
+
+            Move();
+            c_Jump = false; 
         }
-
-        c_Move = Vector3.right * h * 0.1f;
-
-
-        // If running then increases the movement speed and the running animation
-        if (CrossPlatformInputManager.GetButton("Run"))
-        {
-            MoveSpeedMultiplier = 1f;
-            //AnimSpeedMultiplier = 1.25f;
-        }
-        else
-        {
-            MoveSpeedMultiplier = 2f;
-            //AnimSpeedMultiplier = 1.0f;
-        }
-
-
-        Move();
-        c_Jump = false;
     }
 
     //Moves the Character
@@ -172,8 +182,7 @@ public class MovementScript : MonoBehaviour
             {
                 isGrounded = true;
                 doubleJump = false;
-            }
-                
+            }   
         }
     }
 
@@ -182,6 +191,7 @@ public class MovementScript : MonoBehaviour
         if (other.gameObject.tag == "Enemy" && other.gameObject.transform.position.y < transform.position.y-1)
         {
             other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+            c_Rigidbody.AddForce(Vector2.up*1000);
         }
     }
 
@@ -201,5 +211,11 @@ public class MovementScript : MonoBehaviour
             GetComponent<PlayerHealthScript>().TakeDamage(10);
 
         }
+    }
+
+    public void pushedBack()
+    {
+        damageTaken = true;
+        timeToWalk = Time.time + 0.5f;
     }
 }

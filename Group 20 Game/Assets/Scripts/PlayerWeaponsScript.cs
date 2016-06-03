@@ -40,6 +40,11 @@ public class PlayerWeaponsScript : MonoBehaviour
         weapon.GetComponent<WeaponScript>().addAmmo(addAmmo);
     }
 
+    public GameObject getCurrentWeapon()
+    {
+        return weapon;
+    }
+
     void RemoveWeapon()
     {
         Destroy(weapon);

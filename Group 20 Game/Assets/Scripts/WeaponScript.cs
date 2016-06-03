@@ -71,6 +71,8 @@ public class WeaponScript : MonoBehaviour {
         }
     }
 
+
+
     public void Enable()
     {
         Enabled = true;
