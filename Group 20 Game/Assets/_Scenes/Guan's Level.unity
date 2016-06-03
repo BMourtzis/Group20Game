@@ -277,12 +277,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &132873148 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11472000, guid: 38a28aaaf4d295540bd1fa0398786397,
-    type: 2}
-  m_PrefabInternal: {fileID: 2084475938}
-  m_Script: {fileID: 11500000, guid: cdea36393ca5be74e988012a4cc04e83, type: 3}
 --- !u!1 &206472463
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +323,12 @@ MonoBehaviour:
   dropDelayReduction: 0.05
   minDrag: 4
   minDelay: 0.5
+--- !u!114 &351231614 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11472000, guid: 38a28aaaf4d295540bd1fa0398786397,
+    type: 2}
+  m_PrefabInternal: {fileID: 2084475938}
+  m_Script: {fileID: 11500000, guid: cdea36393ca5be74e988012a4cc04e83, type: 3}
 --- !u!1001 &378236848
 Prefab:
   m_ObjectHideFlags: 0
@@ -807,14 +807,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11404808, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
+      propertyPath: resetPoint
+      value: 
+      objectReference: {fileID: 85279256}
     - target: {fileID: 11493274, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
       propertyPath: text
       value: 
-      objectReference: {fileID: 132873148}
-    - target: {fileID: 2033808, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
-      propertyPath: orthographic size
-      value: 20
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 351231614}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
   m_IsPrefabParent: 0

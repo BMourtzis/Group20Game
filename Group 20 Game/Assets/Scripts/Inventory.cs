@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     GameObject[] weapons;
 
     [SerializeField]
-    bool[] Keys;
+    bool[] Keys = new bool[10];
 
     int inUse;
     void Update()

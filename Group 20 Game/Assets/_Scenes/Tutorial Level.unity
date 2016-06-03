@@ -1432,18 +1432,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
-    - target: {fileID: 11493274, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
-      propertyPath: text
-      value: 
-      objectReference: {fileID: 428198213}
     - target: {fileID: 11404808, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
       propertyPath: resetPoint
       value: 
       objectReference: {fileID: 1823277271}
-    - target: {fileID: 2033808, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
-      propertyPath: orthographic size
-      value: 13
-      objectReference: {fileID: 0}
+    - target: {fileID: 11493274, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 428198213}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
   m_IsPrefabParent: 0
