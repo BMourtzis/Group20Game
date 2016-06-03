@@ -59,7 +59,7 @@ public class EnemyAI : MonoBehaviour {
     void MoveToLKP()
     {
         float playDist = Vector2.Distance(transform.position, player.transform.position);
-        if (playDist <= 0.7* transform.lossyScale.x && Time.time > timeToAttack)
+        if (playDist <= 0.7*transform.lossyScale.x && Time.time > timeToAttack)
         {
             if(transform.position.x < player.transform.position.x)
             {
@@ -93,7 +93,7 @@ public class EnemyAI : MonoBehaviour {
         Vector3 patPoint = PatrolPoints[patrolPoint].position;
         float dist = Vector2.Distance(transform.position, patPoint);
 
-        if(Mathf.Abs(dist) < 1f)
+        if(Mathf.Abs(dist) < 1f* transform.lossyScale.x)
         {
             patrolPoint++;
             if(patrolPoint >= PatrolPoints.Length)

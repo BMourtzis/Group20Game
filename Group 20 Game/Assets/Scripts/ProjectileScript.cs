@@ -27,7 +27,10 @@ public class ProjectileScript : MonoBehaviour {
         {
 			if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Bomb")
             {
-                other.gameObject.SendMessage("TakeDamage", Damage);
+                if(other.gameObject.GetComponent<EnemyHealth>() != null)
+                {
+                    other.gameObject.GetComponent<EnemyHealth>().TakeDamage(Damage);
+                }
             }
             Destroy(gameObject);
         }
