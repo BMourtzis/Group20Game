@@ -323,12 +323,6 @@ MonoBehaviour:
   dropDelayReduction: 0.05
   minDrag: 4
   minDelay: 0.5
---- !u!114 &351231614 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11472000, guid: 38a28aaaf4d295540bd1fa0398786397,
-    type: 2}
-  m_PrefabInternal: {fileID: 2084475938}
-  m_Script: {fileID: 11500000, guid: cdea36393ca5be74e988012a4cc04e83, type: 3}
 --- !u!1001 &378236848
 Prefab:
   m_ObjectHideFlags: 0
@@ -1097,11 +1091,9 @@ Prefab:
     m_Modifications:
     - target: {fileID: 419678, guid: 14449dc9cdc8a5b48ac6db52d6f39def, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 92.8
       objectReference: {fileID: 0}
     - target: {fileID: 419678, guid: 14449dc9cdc8a5b48ac6db52d6f39def, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 419678, guid: 14449dc9cdc8a5b48ac6db52d6f39def, type: 2}
       propertyPath: m_LocalPosition.z
