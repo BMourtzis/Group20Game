@@ -22,10 +22,10 @@ public class MovementScript : MonoBehaviour
     [SerializeField]
     Transform resetPoint;
     [SerializeField]
-    private LayerMask m_WhatIsGround;               // A mask determining what is ground to the character
+    private LayerMask m_WhatIsGround; // A mask determining what is ground to the character
 
     private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+    const float k_GroundedRadius = .3f; // Radius of the overlap circle to determine if grounded
     private Vector3 c_Move;
     private bool c_Jump;
     private bool c_Run;
@@ -182,7 +182,7 @@ public class MovementScript : MonoBehaviour
             {
                 isGrounded = true;
                 doubleJump = false;
-            }   
+            }
         }
     }
 
@@ -209,7 +209,6 @@ public class MovementScript : MonoBehaviour
         {
             transform.position = resetPoint.position;
             GetComponent<PlayerHealthScript>().TakeDamage(10);
-
         }
     }
 
