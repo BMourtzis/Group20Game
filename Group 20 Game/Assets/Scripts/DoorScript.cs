@@ -6,7 +6,7 @@ public class DoorScript : MonoBehaviour
     [SerializeField]
     [Range(0, 10)]
     int key;
-    Sprite newDoorSprite = ;
+    Sprite newDoorSprite ;
 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -17,7 +17,7 @@ public class DoorScript : MonoBehaviour
             if(other.GetComponent<Inventory>().putKey(key))
             {
                 Destroy(gameObject.GetComponent<Collider>());
-                gameObject.GetComponent<SpriteRenderer>().sprite = "doorOpen.png";
+                gameObject.GetComponent<SpriteRenderer>().sprite = newDoorSprite;
             }
         }
     }
