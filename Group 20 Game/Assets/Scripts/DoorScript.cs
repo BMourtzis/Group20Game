@@ -14,7 +14,7 @@ public class DoorScript : MonoBehaviour
     {
         if (other.tag == "Player" && other.GetComponent<Inventory>().putKey(key))
         {
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
             gameObject.GetComponent<SpriteRenderer>().sprite = newDoorSprite;
         }
     }
