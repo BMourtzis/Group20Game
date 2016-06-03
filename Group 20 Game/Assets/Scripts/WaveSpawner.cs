@@ -9,19 +9,24 @@ public class WaveSpawner : MonoBehaviour
 	public Text guideText;
 
 	int enemies;
-	int alive;
 
 	void Start()
 	{
-		enemies = 40;
+		enemies = 10;
 		StartCoroutine(Spawn());
-		alive = enemies;
 	}
 
 	void Update() {
 		
-		if (alive < 0)
+		if (searchAlive() == false)
 			guideText.text = "You killed them all";
+		enemyRemainder.text = "Enemies: " + GameObject.FindGameObjectsWithTag ("Enemy").Length;
+	}
+
+	bool searchAlive() {
+		if (GameObject.FindGameObjectWithTag ("Enemy") == null)
+			return false;
+		return true;
 	}
 
 	IEnumerator Spawn()
@@ -44,8 +49,6 @@ public class WaveSpawner : MonoBehaviour
 				Instantiate(enemy, spawnPositionRight, transform.rotation);
 			}
 			enemies -= 1;
-			enemyRemainder.text = "Enemies: " + alive;
-
 			yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
 		}
 	}
@@ -53,9 +56,5 @@ public class WaveSpawner : MonoBehaviour
 	public int getNumOfEnemies()
 	{
 		return enemies;
-	}
-
-	public void setAlive(int killed) {
-		alive -= killed;
 	}
 }

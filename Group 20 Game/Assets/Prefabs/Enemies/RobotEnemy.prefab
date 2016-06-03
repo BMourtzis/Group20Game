@@ -14,7 +14,6 @@ GameObject:
   - 61: {fileID: 6136790}
   - 114: {fileID: 11482756}
   - 114: {fileID: 11491386}
-  - 114: {fileID: 11437420}
   m_Layer: 10
   m_Name: RobotEnemy
   m_TagString: Enemy
@@ -32,7 +31,7 @@ GameObject:
   - 4: {fileID: 461160}
   m_Layer: 10
   m_Name: RobotEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,17 +106,6 @@ BoxCollider2D:
   m_Offset: {x: 0.020135242, y: -0.06376425}
   serializedVersion: 2
   m_Size: {x: 0.47178426, y: 1.1275285}
---- !u!114 &11437420
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8a87e62fcb6b84f950d928fcdc30de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11482756
 MonoBehaviour:
   m_ObjectHideFlags: 1
