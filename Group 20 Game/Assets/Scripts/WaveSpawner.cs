@@ -20,7 +20,7 @@ public class WaveSpawner : MonoBehaviour
 	void Update() {
 		
 		if (searchAlive () == false && enemies <= 0)
-			winGame ();
+			StartCoroutine (winGame ());
 		enemyRemainder.text = "Enemies: " + GameObject.FindGameObjectsWithTag ("Enemy").Length/2;
 	}
 
@@ -30,9 +30,10 @@ public class WaveSpawner : MonoBehaviour
 		return true;
 	}
 
-	void winGame()
+	IEnumerator winGame()
 	{
 		guideText.text = "You killed them all";
+		yield return new WaitForSeconds (3);
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	}
 

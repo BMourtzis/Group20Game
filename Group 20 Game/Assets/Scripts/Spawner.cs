@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour {
 		// Bombs will drop quicker and more often as time progresses.
 		guideText.text = "Shoot the bombs before it destroys your ship!";
 		yield return new WaitForSeconds (4);
-		guideText.text = "There is ammo around the turrets of the ship!";
+		guideText.text = "There is ammo located around the turrets of the ship!";
 		yield return new WaitForSeconds (4);
 		guideText.text = "Good luck!";
 		yield return new WaitForSeconds (2);

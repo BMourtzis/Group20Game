@@ -630,11 +630,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11475838, guid: 38a28aaaf4d295540bd1fa0398786397, type: 2}
       propertyPath: text
-      value: 'Level 4: Kill Bill'
+      value: 'Level 4: Call of Vasilis'
       objectReference: {fileID: 0}
     - target: {fileID: 11475838, guid: 38a28aaaf4d295540bd1fa0398786397, type: 2}
       propertyPath: timeTaken
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450874, guid: 38a28aaaf4d295540bd1fa0398786397, type: 2}
+      propertyPath: m_Text
+      value: Level 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38a28aaaf4d295540bd1fa0398786397, type: 2}
