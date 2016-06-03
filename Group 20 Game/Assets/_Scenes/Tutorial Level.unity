@@ -2083,6 +2083,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 11412606, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
+      propertyPath: weaponSet.Array.data[0].Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 222b2ba82c6dcc74ebfc420d19ac7381, type: 2}
   m_IsPrefabParent: 0

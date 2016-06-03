@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthScript : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class PlayerHealthScript : MonoBehaviour
         else if (HealthPoints <= 0)
         {
             HealthPoints = 0;
-            //End game;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         text.setHealth(HealthPoints);
