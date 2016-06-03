@@ -14,4 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Lock Island.unity
   - enabled: 1
+    path: Assets/_Scenes/Kill Bill.unity
+  - enabled: 1
     path: Assets/_Scenes/Guan's Level.unity
