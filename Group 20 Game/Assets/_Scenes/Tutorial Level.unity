@@ -1440,9 +1440,21 @@ Prefab:
       propertyPath: resetPoint
       value: 
       objectReference: {fileID: 1823277271}
-    - target: {fileID: 2033808, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
-      propertyPath: orthographic size
-      value: 13
+    - target: {fileID: 6139004, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
+      propertyPath: m_Offset.x
+      value: -0.015020132
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139004, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
+      propertyPath: m_Size.x
+      value: 0.940563
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139004, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
+      propertyPath: m_Offset.y
+      value: 0.030042648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139004, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}
+      propertyPath: m_Size.y
+      value: 2.0510058
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c3b6590ca26c4943806ac9e5e145872, type: 2}

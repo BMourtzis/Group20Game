@@ -94,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.86, y: -1.58, z: 0}
+  m_LocalPosition: {x: -2.58, y: 19.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442922}
@@ -146,7 +146,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 13
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -188,9 +188,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0075101852, y: 0.015022278}
   serializedVersion: 2
-  m_Size: {x: 0.52, y: 1.3}
+  m_Size: {x: 0.8053819, y: 1.9308449}
 --- !u!61 &6157814
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -202,9 +202,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.015020132, y: 0.022529602}
   serializedVersion: 2
-  m_Size: {x: 0.52, y: 1.3}
+  m_Size: {x: 0.88048255, y: 1.9759052}
 --- !u!81 &8157388
 AudioListener:
   m_ObjectHideFlags: 1
@@ -357,7 +357,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1783731295
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8fb98a6035269e64a998f9b56828fc4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10622463871fe8b4685c84d6809640db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
