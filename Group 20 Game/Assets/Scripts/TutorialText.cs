@@ -23,7 +23,7 @@ public class TutorialText : MonoBehaviour
 
     public void DoubleJumpTip()
     {
-        text.text = "For higher and longer obstacles, you can double jump";
+        text.text = "For higher and longer obstacles, you can double and triple jump";
     }
 
     public void EnemyTip()
@@ -50,7 +50,7 @@ public class TutorialText : MonoBehaviour
     public void UseGunTip()
     {
         text.text = "Use the Left Click to fire the your weapon, aim with the mouse";
-        text.text += "All your weapons are stored in your Inventory, accessible by pressing 1-5";
+        text.text += "All your weapons are stored in your Inventory, accessible by pressing 1-3";
     }
 
     public void AmmoPackTip()
