@@ -6,12 +6,24 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     float HealthPoints;
 
+    bool kill;
+
+    void Start()
+    {
+        kill = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (HealthPoints < 1)
+        if(kill)
         {
             Destroy(transform.parent.gameObject);
+        }
+
+        if (HealthPoints < 1)
+        {
+            kill = true;
         }
     }
 

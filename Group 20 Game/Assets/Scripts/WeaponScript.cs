@@ -101,6 +101,7 @@ public class WeaponScript : MonoBehaviour {
     {
         Ammo = newAmmo;
     }
+
     public void addAmmo(int addAmmo)
     {
         Ammo += addAmmo;
