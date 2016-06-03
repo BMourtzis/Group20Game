@@ -55,6 +55,6 @@ public class ShipHealth : MonoBehaviour {
 
 	IEnumerator nextLevel() {
 		yield return new WaitForSeconds (3);
-		Application.LoadLevel (4);
+		Application.LoadLevel (0);
 	}
 }
