@@ -25,7 +25,7 @@ public class KillBillEnemyAI : MonoBehaviour {
 	void MoveToPlayer()
 	{
 		float playDist = Vector2.Distance (transform.position, player.transform.position);
-		if (playDist <= 0.7 && Time.time > timeToAttack) {
+		if (playDist <= 0.9 && Time.time > timeToAttack) {
 			if (transform.position.x < player.transform.position.x) {
 				Attack (true);
 			} else {
