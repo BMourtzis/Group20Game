@@ -59,6 +59,12 @@ public class StartMenuScript : MonoBehaviour
         PauseMenu();
     }
 
+    public void Reset()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+
     public void Quit()
     {
 #if UNITY_EDITOR

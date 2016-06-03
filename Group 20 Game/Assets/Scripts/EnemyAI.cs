@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour {
     bool onAlert;
     GameObject player;
     private int patrolPoint;
+    float timeToAttack;
 
     // Use this for initialization
     void Start ()
@@ -58,7 +59,7 @@ public class EnemyAI : MonoBehaviour {
     void MoveToLKP()
     {
         float playDist = Vector2.Distance(transform.position, player.transform.position);
-        if (playDist <= 0.7)
+        if (playDist <= 0.7 && Time.time > timeToAttack)
         {
             if(transform.position.x < player.transform.position.x)
             {
@@ -84,6 +85,7 @@ public class EnemyAI : MonoBehaviour {
     {
         PlayerHealthScript playerHealth = player.GetComponent<PlayerHealthScript>();
         playerHealth.TakeDamage(DamangePoints, right);
+        timeToAttack = Time.time + 0.5f;
     }
 
     void Patrol()
