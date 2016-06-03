@@ -63,7 +63,6 @@ GameObject:
   - 114: {fileID: 11404808}
   - 61: {fileID: 6139004}
   - 50: {fileID: 5034200}
-  - 114: {fileID: 11496934}
   - 61: {fileID: 6157814}
   - 114: {fileID: 11493274}
   - 114: {fileID: 11458438}
@@ -301,17 +300,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthPoints: 100
   text: {fileID: 0}
---- !u!114 &11496934
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e6d3f3b4ffe5054fb725df1b5b87a21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11499960
 MonoBehaviour:
   m_ObjectHideFlags: 1

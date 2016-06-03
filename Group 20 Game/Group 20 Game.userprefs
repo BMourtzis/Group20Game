@@ -1,19 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WeaponScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyHealth.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerWeaponsScript.cs" Line="9" Column="23" />
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\StartMenuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerHealthScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TutorialScripts\jump.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TutorialScripts\enemyJump.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ShipHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DoorScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WaveSpawner.cs" Line="37" Column="48" />
+      <File FileName="Assets\Scripts\HT_SetParticleSortingLayer.cs" Line="7" Column="26" />
+      <File FileName="Assets\KillBillEnemyAI.cs" Line="28" Column="53" />
+      <File FileName="Assets\EnemyHPKillBill.cs" Line="20" Column="26" />
       <File FileName="Assets\Scripts\MovementScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WeaponScript.cs" Line="43" Column="100" />
       <File FileName="Assets\Scripts\WeaponReset.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WeaponItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyHealth.cs" Line="7" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
