@@ -20,6 +20,12 @@ public class WeaponScript : MonoBehaviour {
     [SerializeField]
     float AreaOfSpread;
 
+<<<<<<< HEAD
+=======
+	//public AudioClip gunSound;
+
+
+>>>>>>> refs/remotes/origin/Guan's-Level
     bool Enabled;
 
     void FixedUpdate()
@@ -67,9 +73,15 @@ public class WeaponScript : MonoBehaviour {
             {
                 GameObject bullet = (GameObject)Instantiate(Projectile, EndOfBarrel.position, Quaternion.Euler(0,0,rotation));
                 bullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.right * 100 * ProjectileSpeed);
+				playGunSound ();
             }
         }
     }
+
+	void playGunSound()
+	{
+		GetComponent<AudioSource> ().Play ();
+	}
 
     public void Enable()
     {
