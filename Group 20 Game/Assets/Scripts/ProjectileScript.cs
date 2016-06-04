@@ -25,13 +25,13 @@ public class ProjectileScript : MonoBehaviour {
     {
         if(!(other.gameObject.tag == "Player") && !(other.gameObject.tag == "Projectile"))
         {
-			if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Bomb")
-            {
-                if(other.gameObject.GetComponent<EnemyHealth>() != null)
-                {
-                    other.gameObject.GetComponent<EnemyHealth>().TakeDamage(Damage);
-                }
-            }
+			if (other.gameObject.tag == "Enemy") {
+				if (other.gameObject.GetComponent<EnemyHealth> () != null) {
+					other.gameObject.GetComponent<EnemyHealth> ().TakeDamage (Damage);
+				}
+			} else if (other.gameObject.tag == "Bomb") {
+				other.gameObject.SendMessage ("TakeDamage", Damage);
+			}
             Destroy(gameObject);
         }
     }
